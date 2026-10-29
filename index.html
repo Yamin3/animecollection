@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animecollection| Movie Showroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>✦ Animecollection</h1>
+        <p>Your Anime Movie Showroom</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#dashboard">Trailers</a>
+    </nav>
+
+    <main>
+        
+<section id="movies">
+    <h2>Anime Movie Gallery 🎬</h2>
+
+    <div class="movie-controls">
+        <input
+            type="text"
+            id="search-input"
+            placeholder="🔍 Search anime movie..."
+        >
+
+       
+<select id="genre-filter">
+    <option value="All">All Genres</option>
+    <option value="Romance">Romance</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Drama">Drama</option>
+    <option value="Action">Action</option>
+</select>
+
+    </div>
+
+    <div id="movie-list"></div>
+    <p id="no-results" hidden>No movies found. Try another search!</p>
+</section>
+
+
+       
+
+        <section id="dashboard">
+            <h2>Trailer Dashboard</h2>
+            <p>Select a movie to explore its trailer.</p>
+        </section>
+    </main>
+
+  
+  
+
+<div id="video-player" hidden>
+    <button type="button" id="close-video">
+        ✕ Close Video
+    </button>
+
+    <video
+        id="movie-video"
+        controls
+        playsinline
+        preload="metadata"
+    ></video>
+
+    <p id="video-message" hidden></p>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+
+/* ===== Animecollection Theme ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0b0b18;
+    color: #f4f2ff;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 55px 20px 45px;
+    background:
+        radial-gradient(ellipse at top, #403071 0%, transparent 65%),
+        linear-gradient(135deg, #171329, #0b0b18);
+    border-bottom: 1px solid #393054;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #d8c5ff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px #a47bff70;
+}
+
+header p {
+    color: #c6bddc;
+    margin: 8px 0 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+    background: #111020ed;
+    border-bottom: 1px solid #302744;
+    backdrop-filter: blur(12px);
+}
+
+nav a {
+    color: #ded5f5;
+    text-decoration: none;
+    padding: 8px 17px;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    background: #8c63d9;
+    color: white;
+}
+
+main {
+    width: min(1200px, 92%);
+    margin: 35px auto;
+}
+
+section {
+    margin-bottom: 55px;
+    scroll-margin-top: 85px;
+}
+
+section h2 {
+    color: #d9c5ff;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 20px;
+}
+
+.movie-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.movie-controls input,
+.movie-controls select {
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #45365f;
+    border-radius: 12px;
+    background: #171529;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.movie-controls input {
+    flex: 1;
+}
+
+.movie-controls input:focus,
+.movie-controls select:focus {
+    border-color: #b69aff;
+    box-shadow: 0 0 0 3px #a47bff25;
+}
+
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.movie-card {
+    overflow: hidden;
+    background: linear-gradient(160deg, #1c1930, #12111f);
+    border: 1px solid #342a4a;
+    border-radius: 17px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.movie-card:hover {
+    transform: translateY(-7px);
+    border-color: #9e7bea;
+    box-shadow: 0 12px 30px #0005, 0 0 18px #9e7bea20;
+}
+
+.movie-card img {
+    display: block;
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    background: #242039;
+}
+
+.movie-card h3 {
+    margin: 15px 15px 5px;
+    color: #e1d3ff;
+}
+
+.movie-card p {
+    margin: 4px 15px;
+    color: #bdb5d2;
+}
+
+.movie-card button {
+    margin: 12px 6px 16px 15px;
+    padding: 10px 13px;
+    border: 0;
+    border-radius: 9px;
+    background: #8c63d9;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.movie-card button:hover {
+    background: #a784f0;
+    transform: scale(1.03);
+}
+
+#no-results {
+    padding: 25px;
+    text-align: center;
+    color: #c7b9e6;
+}
+
+#dashboard {
+    padding: 25px;
+    background: #151326;
+    border: 1px solid #342a4a;
+    border-radius: 16px;
+}
+
+#video-player {
+    width: min(1000px, 92%);
+    margin: 35px auto;
+    padding: 12px;
+    background: #171329;
+    border: 1px solid #51406e;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px #0005;
+    scroll-margin-top: 85px;
+}
+
+#movie-video {
+    display: block;
+    width: 100%;
+    max-height: 75vh;
+    background: #000;
+    border-radius: 10px;
+}
+
+#video-message {
+    color: #ffd4d4;
+    padding: 10px;
+}
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    color: #a9a0c0;
+    border-top: 1px solid #302744;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 38px 15px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 7px 11px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        width: 92%;
+        margin-top: 25px;
+    }
+
+    #movie-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .movie-card img {
+        height: 210px;
+    }
+
+    .movie-card h3 {
+        margin: 10px 10px 4px;
+        font-size: 1rem;
+    }
+
+    .movie-card p {
+        margin: 4px 10px;
+        font-size: 0.85rem;
+    }
+
+    .movie-card button {
+        margin: 9px 5px 12px 9px;
+        padding: 8px 9px;
+        font-size: 0.8rem;
+    }
+
+    .movie-controls {
+        flex-direction: column;
+    }
+
+    .movie-controls input,
+    .movie-controls select {
+        width: 100%;
+    }
+}
+
+/* Trailer button */
+.trailer-button {
+    display: inline-block;
+    margin: 12px 0 16px 15px;
+    padding: 10px 13px;
+    border-radius: 9px;
+    background: #392d53;
+    border: 1px solid #70549f;
+    color: #e7d9ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.trailer-button:hover {
+    background: #594078;
+}
+
+/* Close video button */
+#close-video {
+    display: block;
+    margin: 0 0 12px auto;
+    padding: 9px 15px;
+    border: 0;
+    border-radius: 9px;
+    background: #8c63d9;
+    color: white;
+    cursor: pointer;
+}
+
+#close-video:hover {
+    background: #a784f0;
+}
+
+#video-message {
+    color: #ffbaba;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .trailer-button {
+        margin: 9px 4px 12px 9px;
+        padding: 8px 9px;
+        font-size: 0.8rem;
+    }
+}
